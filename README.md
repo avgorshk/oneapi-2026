@@ -474,11 +474,13 @@ std::vector<float> JacobiKokkos(
     // Place your implementation here
 }
 ```
+
 # Results
 ## 1_permutations_cxx (102400 elements)
 |Group|Name|Result|Rank|
 |-----|----|------|----|
 |**REF**|**REF**|**0.2492**|**-**|
+|3822B1FI1|kabalova_valeria|TOO SLOW|-|
 
 ## 2_integral_oneapi (65536 elements)
 |Group|Name|Result|Rank|
