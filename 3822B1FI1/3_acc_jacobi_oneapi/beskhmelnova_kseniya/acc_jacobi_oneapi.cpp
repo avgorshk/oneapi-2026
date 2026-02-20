@@ -18,9 +18,10 @@ std::vector<float> JacobiAccONEAPI(
     sycl::buffer<float, 1> a_buf(a.data(), sycl::range<1>(a.size()));
     sycl::buffer<float, 1> b_buf(b.data(), sycl::range<1>(b.size()));
     sycl::buffer<float, 1> inv_diag_buf(inv_diag.data(), sycl::range<1>(n));
-    sycl::buffer<float, 1> x_curr_buf(sycl::range<1>(n));
-    sycl::buffer<float, 1> x_next_buf(sycl::range<1>(n));
-    sycl::buffer<float, 1> norm_buf(sycl::range<1>(1));
+
+    sycl::buffer<float, 1> x_curr_buf{sycl::range<1>(n)};
+    sycl::buffer<float, 1> x_next_buf{sycl::range<1>(n)};
+    sycl::buffer<float, 1> norm_buf{sycl::range<1>(1)};
 
     q.submit([&](sycl::handler& cgh) {
         auto x_acc = x_curr_buf.get_access<sycl::access::mode::write>(cgh);
@@ -34,18 +35,6 @@ std::vector<float> JacobiAccONEAPI(
             auto inv_diag_acc = inv_diag_buf.get_access<sycl::access::mode::read>(cgh);
             auto x_curr_acc = x_curr_buf.get_access<sycl::access::mode::read>(cgh);
             auto x_next_acc = x_next_buf.get_access<sycl::access::mode::write>(cgh);
-            auto norm_acc = norm_buf.get_access<sycl::access::mode::atomic>(cgh, cgh);
-
-            cgh.single_task([=]() { norm_acc[0] = 0.0f; });
-        });
-
-        q.submit([&](sycl::handler& cgh) {
-            auto a_acc = a_buf.get_access<sycl::access::mode::read>(cgh);
-            auto b_acc = b_buf.get_access<sycl::access::mode::read>(cgh);
-            auto inv_diag_acc = inv_diag_buf.get_access<sycl::access::mode::read>(cgh);
-            auto x_curr_acc = x_curr_buf.get_access<sycl::access::mode::read>(cgh);
-            auto x_next_acc = x_next_buf.get_access<sycl::access::mode::write>(cgh);
-            auto norm_acc = norm_buf.get_access<sycl::access::mode::atomic>(cgh);
 
             cgh.parallel_for(sycl::range<1>(n), [=](sycl::id<1> idx) {
                 size_t i = idx[0];
@@ -53,18 +42,32 @@ std::vector<float> JacobiAccONEAPI(
                 size_t row_start = i * n;
 
                 #pragma unroll(4)
-                for (size_t j = 0; j < n; j++) {
+                for (size_t j = 0; j < n; ++j) {
                     if (j != i) {
                         sum += a_acc[row_start + j] * x_curr_acc[j];
                     }
                 }
 
-                float x_new = inv_diag_acc[i] * (b_acc[i] - sum);
-                x_next_acc[i] = x_new;
-
-                float diff = x_new - x_curr_acc[i];
-                norm_acc[0].fetch_add(diff * diff);
+                x_next_acc[i] = inv_diag_acc[i] * (b_acc[i] - sum);
             });
+        });
+
+        q.submit([&](sycl::handler& cgh) {
+            auto norm_acc = norm_buf.get_access<sycl::access::mode::write>(cgh);
+            cgh.single_task([=]() { norm_acc[0] = 0.0f; });
+        });
+
+        q.submit([&](sycl::handler& cgh) {
+            auto x_curr_acc = x_curr_buf.get_access<sycl::access::mode::read>(cgh);
+            auto x_next_acc = x_next_buf.get_access<sycl::access::mode::read>(cgh);
+            auto reduction = sycl::reduction(norm_buf, cgh, sycl::plus<float>());
+
+            cgh.parallel_for(sycl::range<1>(n), reduction,
+                [=](sycl::id<1> idx, auto& norm_red) {
+                    size_t i = idx[0];
+                    float diff = x_next_acc[i] - x_curr_acc[i];
+                    norm_red += diff * diff;
+                });
         }).wait();
 
         float current_norm_sq = norm_buf.get_host_access()[0];

@@ -35,50 +35,36 @@ std::vector<float> JacobiDevONEAPI(
     for (int iter = 0; iter < ITERATIONS && !converged; iter++) {
         q.memset(d_norm_sq, 0, sizeof(float));
 
-        q.parallel_for(sycl::nd_range<1>(
-            sycl::range<1>(((n + wg_size - 1) / wg_size) * wg_size),
-            sycl::range<1>(wg_size)
-        ), [=](sycl::nd_item<1> item) {
-            size_t gid = item.get_global_id(0);
-            size_t lid = item.get_local_id(0);
-            size_t group_size = item.get_local_range()[0];
+        sycl::buffer<float, 1> norm_buf(d_norm_sq, sycl::range<1>(1));
+        
+        q.submit([&](sycl::handler& cgh) {
+            auto a_acc = sycl::accessor(d_a, cgh, sycl::read_only);
+            auto b_acc = sycl::accessor(d_b, cgh, sycl::read_only);
+            auto inv_diag_acc = sycl::accessor(d_inv_diag, cgh, sycl::read_only);
+            auto x_curr_acc = sycl::accessor(d_x_curr, cgh, sycl::read_only);
+            auto x_next_acc = sycl::accessor(d_x_next, cgh, sycl::write_only);
+            auto reduction = sycl::reduction(norm_buf, cgh, sycl::plus<float>());
 
-            sycl::group_local_memory_for_overwrite<float[256]> local_mem(item.get_group());
-            float* local_sum = local_mem.get_ptr();
+            cgh.parallel_for(sycl::nd_range<1>(
+                sycl::range<1>(((n + wg_size - 1) / wg_size) * wg_size),
+                sycl::range<1>(wg_size)
+            ), reduction, [=](sycl::nd_item<1> item, auto& norm_red) {
+                size_t gid = item.get_global_id(0);
+                if (gid >= n) return;
 
-            float local_val = 0.0f;
-            if (gid < n) {
                 float sum = 0.0f;
                 size_t row_start = gid * n;
                 #pragma unroll(4)
                 for (size_t j = 0; j < n; j++) {
                     if (j != gid) {
-                        sum += d_a[row_start + j] * d_x_curr[j];
+                        sum += a_acc[row_start + j] * x_curr_acc[j];
                     }
                 }
-                float x_new = d_inv_diag[gid] * (d_b[gid] - sum);
-                d_x_next[gid] = x_new;
-
-                float diff = x_new - d_x_curr[gid];
-                local_val = diff * diff;
-            }
-
-            local_sum[lid] = local_val;
-            item.barrier(sycl::access::fence_space::local_space);
-
-            for (size_t stride = group_size / 2; stride > 0; stride >>= 1) {
-                if (lid < stride) {
-                    local_sum[lid] += local_sum[lid + stride];
-                }
-                item.barrier(sycl::access::fence_space::local_space);
-            }
-
-            if (lid == 0) {
-                sycl::atomic_ref<float, sycl::memory_order::relaxed, 
-                                sycl::memory_scope::device> 
-                    atomic_norm(d_norm_sq);
-                atomic_norm.fetch_add(local_sum[0]);
-            }
+                float x_new = inv_diag_acc[gid] * (b_acc[gid] - sum);
+                x_next_acc[gid] = x_new;
+                float diff = x_new - x_curr_acc[gid];
+                norm_red += diff * diff;
+            });
         }).wait();
 
         float norm_host;
