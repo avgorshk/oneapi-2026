@@ -1,4 +1,0 @@
-/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/2_integral_oneapi/kabalova_valeria/integral_oneapi.cpp:27:3: error: use of undeclared identifier 'queue'
-   27 |   queue.wait();
-      |   ^
-1 error generated.
