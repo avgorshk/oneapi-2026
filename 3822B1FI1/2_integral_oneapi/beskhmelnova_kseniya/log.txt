@@ -1,0 +1,329 @@
+In file included from /home/crazyproger/sandbox/oneapi-2026/3822B1FI1/2_integral_oneapi/beskhmelnova_kseniya/integral_oneapi.cpp:1:
+In file included from /home/crazyproger/sandbox/oneapi-2026/3822B1FI1/2_integral_oneapi/beskhmelnova_kseniya/integral_oneapi.h:4:
+In file included from /opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/sycl.hpp:25:
+In file included from /opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/detail/core.hpp:21:
+In file included from /opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/accessor.hpp:12:
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/atomic.hpp:286:5: error: static assertion failed due to requirement '!std::is_same<float, float>::value': SYCL atomic function not available for float type
+  286 |     __SYCL_STATIC_ASSERT_NOT_FLOAT(T);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/atomic.hpp:25:17: note: expanded from macro '__SYCL_STATIC_ASSERT_NOT_FLOAT'
+   25 |   static_assert(!std::is_same<T, float>::value,                                \
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/2_integral_oneapi/beskhmelnova_kseniya/integral_oneapi.cpp:21:28: note: in instantiation of member function 'sycl::atomic<float, sycl::access::address_space::global_space>::fetch_add' requested here
+   21 |                 sin_acc[0].fetch_add(sycl::sin(x));
+      |                            ^
+In file included from /home/crazyproger/sandbox/oneapi-2026/3822B1FI1/2_integral_oneapi/beskhmelnova_kseniya/integral_oneapi.cpp:1:
+In file included from /home/crazyproger/sandbox/oneapi-2026/3822B1FI1/2_integral_oneapi/beskhmelnova_kseniya/integral_oneapi.h:4:
+In file included from /opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/sycl.hpp:25:
+In file included from /opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/detail/core.hpp:21:
+In file included from /opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/accessor.hpp:12:
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/atomic.hpp:287:12: error: no matching function for call to '__spirv_AtomicIAdd'
+  287 |     return __spirv_AtomicIAdd(
+      |            ^~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:385:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to '__global int *' for 1st argument
+  385 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_SIGNED, int)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:379:3: note: expanded from macro '__SPIRV_ATOMICS'
+  379 |   macro(__attribute__((opencl_global)), Arg)                                   \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:342:3: note: expanded from macro '__SPIRV_ATOMIC_SIGNED'
+  342 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |       ~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:385:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to '__local int *' for 1st argument
+  385 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_SIGNED, int)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:380:7: note: expanded from macro '__SPIRV_ATOMICS'
+  380 |       macro(__attribute__((opencl_local)), Arg) macro(, Arg)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:342:3: note: expanded from macro '__SPIRV_ATOMIC_SIGNED'
+  342 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |       ~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:385:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to 'int *' for 1st argument
+  385 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_SIGNED, int)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:380:49: note: expanded from macro '__SPIRV_ATOMICS'
+  380 |       macro(__attribute__((opencl_local)), Arg) macro(, Arg)
+      |                                                 ^~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:342:3: note: expanded from macro '__SPIRV_ATOMIC_SIGNED'
+  342 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |          ~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:386:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to '__global long *' for 1st argument
+  386 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_SIGNED, long)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:379:3: note: expanded from macro '__SPIRV_ATOMICS'
+  379 |   macro(__attribute__((opencl_global)), Arg)                                   \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:342:3: note: expanded from macro '__SPIRV_ATOMIC_SIGNED'
+  342 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |       ~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:386:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to '__local long *' for 1st argument
+  386 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_SIGNED, long)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:380:7: note: expanded from macro '__SPIRV_ATOMICS'
+  380 |       macro(__attribute__((opencl_local)), Arg) macro(, Arg)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:342:3: note: expanded from macro '__SPIRV_ATOMIC_SIGNED'
+  342 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |       ~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:386:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to 'long *' for 1st argument
+  386 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_SIGNED, long)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:380:49: note: expanded from macro '__SPIRV_ATOMICS'
+  380 |       macro(__attribute__((opencl_local)), Arg) macro(, Arg)
+      |                                                 ^~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:342:3: note: expanded from macro '__SPIRV_ATOMIC_SIGNED'
+  342 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |          ~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:387:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to '__global long long *' for 1st argument
+  387 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_SIGNED, long long)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:379:3: note: expanded from macro '__SPIRV_ATOMICS'
+  379 |   macro(__attribute__((opencl_global)), Arg)                                   \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:342:3: note: expanded from macro '__SPIRV_ATOMIC_SIGNED'
+  342 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |       ~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:387:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to '__local long long *' for 1st argument
+  387 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_SIGNED, long long)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:380:7: note: expanded from macro '__SPIRV_ATOMICS'
+  380 |       macro(__attribute__((opencl_local)), Arg) macro(, Arg)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:342:3: note: expanded from macro '__SPIRV_ATOMIC_SIGNED'
+  342 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |       ~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:387:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to 'long long *' for 1st argument
+  387 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_SIGNED, long long)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:380:49: note: expanded from macro '__SPIRV_ATOMICS'
+  380 |       macro(__attribute__((opencl_local)), Arg) macro(, Arg)
+      |                                                 ^~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:342:3: note: expanded from macro '__SPIRV_ATOMIC_SIGNED'
+  342 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |          ~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:388:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to '__global unsigned int *' for 1st argument
+  388 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_UNSIGNED, unsigned int)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:379:3: note: expanded from macro '__SPIRV_ATOMICS'
+  379 |   macro(__attribute__((opencl_global)), Arg)                                   \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:347:3: note: expanded from macro '__SPIRV_ATOMIC_UNSIGNED'
+  347 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |       ~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:388:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to '__local unsigned int *' for 1st argument
+  388 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_UNSIGNED, unsigned int)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:380:7: note: expanded from macro '__SPIRV_ATOMICS'
+  380 |       macro(__attribute__((opencl_local)), Arg) macro(, Arg)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:347:3: note: expanded from macro '__SPIRV_ATOMIC_UNSIGNED'
+  347 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |       ~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:388:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to 'unsigned int *' for 1st argument
+  388 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_UNSIGNED, unsigned int)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:380:49: note: expanded from macro '__SPIRV_ATOMICS'
+  380 |       macro(__attribute__((opencl_local)), Arg) macro(, Arg)
+      |                                                 ^~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:347:3: note: expanded from macro '__SPIRV_ATOMIC_UNSIGNED'
+  347 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |          ~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:389:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to '__global unsigned long *' for 1st argument
+  389 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_UNSIGNED, unsigned long)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:379:3: note: expanded from macro '__SPIRV_ATOMICS'
+  379 |   macro(__attribute__((opencl_global)), Arg)                                   \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:347:3: note: expanded from macro '__SPIRV_ATOMIC_UNSIGNED'
+  347 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |       ~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:389:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to '__local unsigned long *' for 1st argument
+  389 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_UNSIGNED, unsigned long)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:380:7: note: expanded from macro '__SPIRV_ATOMICS'
+  380 |       macro(__attribute__((opencl_local)), Arg) macro(, Arg)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:347:3: note: expanded from macro '__SPIRV_ATOMIC_UNSIGNED'
+  347 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |       ~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:389:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to 'unsigned long *' for 1st argument
+  389 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_UNSIGNED, unsigned long)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:380:49: note: expanded from macro '__SPIRV_ATOMICS'
+  380 |       macro(__attribute__((opencl_local)), Arg) macro(, Arg)
+      |                                                 ^~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:347:3: note: expanded from macro '__SPIRV_ATOMIC_UNSIGNED'
+  347 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |          ~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:390:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to '__global unsigned long long *' for 1st argument
+  390 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_UNSIGNED, unsigned long long)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:379:3: note: expanded from macro '__SPIRV_ATOMICS'
+  379 |   macro(__attribute__((opencl_global)), Arg)                                   \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:347:3: note: expanded from macro '__SPIRV_ATOMIC_UNSIGNED'
+  347 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |       ~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:390:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to '__local unsigned long long *' for 1st argument
+  390 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_UNSIGNED, unsigned long long)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:380:7: note: expanded from macro '__SPIRV_ATOMICS'
+  380 |       macro(__attribute__((opencl_local)), Arg) macro(, Arg)
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:347:3: note: expanded from macro '__SPIRV_ATOMIC_UNSIGNED'
+  347 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |       ~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:390:17: note: candidate function not viable: no known conversion from 'typename detail::DecoratedType<float, (address_space)1>::type *' (aka '__global float *') to 'unsigned long long *' for 1st argument
+  390 | __SPIRV_ATOMICS(__SPIRV_ATOMIC_UNSIGNED, unsigned long long)
+      | ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:380:49: note: expanded from macro '__SPIRV_ATOMICS'
+  380 |       macro(__attribute__((opencl_local)), Arg) macro(, Arg)
+      |                                                 ^~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:347:3: note: expanded from macro '__SPIRV_ATOMIC_UNSIGNED'
+  347 |   __SPIRV_ATOMIC_BASE(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:335:3: note: expanded from macro '__SPIRV_ATOMIC_BASE'
+  335 |   __SPIRV_ATOMIC_IADD(AS, Type)                                                \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/__spirv/spirv_ops.hpp:276:37: note: expanded from macro '__SPIRV_ATOMIC_IADD'
+  276 |   extern __DPCPP_SYCL_EXTERNAL Type __spirv_AtomicIAdd(                        \
+      |                                     ^
+  277 |       AS Type *P, __spv::Scope::Flag S, __spv::MemorySemanticsMask::Flag O,    \
+      |          ~~~~~~~
+2 errors generated.

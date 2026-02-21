@@ -1,0 +1,47 @@
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/4_dev_jacobi_oneapi/beskhmelnova_kseniya/dev_jacobi_oneapi.cpp:46:13: error: no template named 'group_local_memory_for_overwrite' in namespace 'sycl'; did you mean 'sycl::ext::oneapi::group_local_memory_for_overwrite'?
+   46 |             sycl::group_local_memory_for_overwrite<float[256]> local_mem(item.get_group());
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |             sycl::ext::oneapi::group_local_memory_for_overwrite
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/ext/oneapi/group_local_memory.hpp:27:26: note: 'sycl::ext::oneapi::group_local_memory_for_overwrite' declared here
+   27 |     __SYCL_ALWAYS_INLINE group_local_memory_for_overwrite(Group g) {
+      |                          ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/4_dev_jacobi_oneapi/beskhmelnova_kseniya/dev_jacobi_oneapi.cpp:46:13: error: no template named 'group_local_memory_for_overwrite' in namespace 'sycl'; did you mean 'sycl::ext::oneapi::group_local_memory_for_overwrite'?
+   46 |             sycl::group_local_memory_for_overwrite<float[256]> local_mem(item.get_group());
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |             sycl::ext::oneapi::group_local_memory_for_overwrite
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/ext/oneapi/group_local_memory.hpp:27:26: note: 'sycl::ext::oneapi::group_local_memory_for_overwrite' declared here
+   27 |     __SYCL_ALWAYS_INLINE group_local_memory_for_overwrite(Group g) {
+      |                          ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/4_dev_jacobi_oneapi/beskhmelnova_kseniya/dev_jacobi_oneapi.cpp:46:63: error: expected ';' after expression
+   46 |             sycl::group_local_memory_for_overwrite<float[256]> local_mem(item.get_group());
+      |                                                               ^
+      |                                                               ;
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/4_dev_jacobi_oneapi/beskhmelnova_kseniya/dev_jacobi_oneapi.cpp:46:13: error: reference to overloaded function could not be resolved; did you mean to call it?
+   46 |             sycl::group_local_memory_for_overwrite<float[256]> local_mem(item.get_group());
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/ext/oneapi/group_local_memory.hpp:27:26: note: possible target for call
+   27 |     __SYCL_ALWAYS_INLINE group_local_memory_for_overwrite(Group g) {
+      |                          ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/4_dev_jacobi_oneapi/beskhmelnova_kseniya/dev_jacobi_oneapi.cpp:46:64: error: use of undeclared identifier 'local_mem'
+   46 |             sycl::group_local_memory_for_overwrite<float[256]> local_mem(item.get_group());
+      |                                                                ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/4_dev_jacobi_oneapi/beskhmelnova_kseniya/dev_jacobi_oneapi.cpp:47:32: error: use of undeclared identifier 'local_mem'
+   47 |             float* local_sum = local_mem.get_ptr();
+      |                                ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/4_dev_jacobi_oneapi/beskhmelnova_kseniya/dev_jacobi_oneapi.cpp:79:21: error: no matching constructor for initialization of 'sycl::atomic_ref<float, sycl::memory_order::relaxed, sycl::memory_scope::device>'
+   79 |                     atomic_norm(d_norm_sq);
+      |                     ^           ~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/atomic_ref.hpp:162:12: note: candidate inherited constructor not viable: no known conversion from 'float *const' to 'float &' for 1st argument; dereference the argument with *
+  162 |   explicit atomic_ref_base(T &ref)
+      |            ^               ~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/atomic_ref.hpp:763:48: note: constructor from base class 'atomic_ref_impl<float, 4, sycl::memory_order::relaxed, sycl::memory_scope::device, sycl::access::address_space::generic_space>' inherited here
+  763 |                                 AddressSpace>::atomic_ref_impl;
+      |                                                ^
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/atomic_ref.hpp:759:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'float *const' to 'const atomic_ref<float, sycl::memory_order::relaxed, sycl::memory_scope::device>' for 1st argument
+  759 | class atomic_ref : public detail::atomic_ref_impl<T, sizeof(T), DefaultOrder,
+      |       ^~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/atomic_ref.hpp:759:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'float *const' to 'atomic_ref<float, sycl::memory_order::relaxed, sycl::memory_scope::device>' for 1st argument
+  759 | class atomic_ref : public detail::atomic_ref_impl<T, sizeof(T), DefaultOrder,
+      |       ^~~~~~~~~~
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/atomic_ref.hpp:759:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+7 errors generated.

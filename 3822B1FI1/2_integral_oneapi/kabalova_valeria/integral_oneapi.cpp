@@ -22,9 +22,10 @@ float IntegralONEAPI(float start, float end, int count, sycl::device device) {
                         sum += (sycl::sin(x) * sycl::cos(y));
                       });
     });
-  }
+
 
   queue.wait();
+  }
 
   return result * delta * delta;
 }
