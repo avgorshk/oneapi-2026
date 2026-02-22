@@ -495,9 +495,9 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|chistov_alexey|0.4474|3|
 |**REF**|**REF**|**0.4723**|**-**|
 |3822B1FI1|beskhmelnova_kseniya|0.8425|2|
+|3822B1FI1|solovev_alexey|0.8441|4|
 |3822B1FI1|kabalova_valeria|0.8483|1|
 |3822B1FI3|lopatin_ilya|0.9945|1|
-|3822B1FI1|solovev_alexey|TOO SLOW|-|
 
 ## 3_acc_jacobi_oneapi (4096 elements)
 |Group|Name|Result|Rank|
@@ -546,10 +546,10 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|beskhmelnova_kseniya|3/9|184|
 |3822B1FI1|chistov_alexey|2/9|126|
 |3822B1FI1|drozhdinov_dmitriy|1/9|60|
-|3822B1FI1|kabalova_valeria|2/9|122|
+|3822B1FI1|kabalova_valeria|2/9|121|
 |3822B1FI1|rezantseva_anastasia|1/9|52|
 |3822B1FI1|shurigin_sergey|1/9|56|
-|3822B1FI1|solovev_alexey|1/9|56|
+|3822B1FI1|solovev_alexey|2/9|115|
 
 Passed: 0
 
@@ -563,5 +563,4 @@ Passed: 0
 **Total Passed: 0**
 
 ---
-*Maximum Score: 576 (64 per task)
-*
+*Maximum Score: 576 (64 per task)*
