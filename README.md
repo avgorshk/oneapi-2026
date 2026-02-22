@@ -487,6 +487,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|solovev_alexey|0.2119|5|
 |3822B1FI1|shurigin_sergey|0.2419|4|
 |**REF**|**REF**|**0.2492**|**-**|
+|3822B1FI1|rezantseva_anastasia|0.2582|7|
 
 ## 2_integral_oneapi (65536 elements)
 |Group|Name|Result|Rank|
@@ -542,6 +543,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|chistov_alexey|1/9|64|
 |3822B1FI1|drozhdinov_dmitriy|1/9|60|
 |3822B1FI1|kabalova_valeria|2/9|123|
+|3822B1FI1|rezantseva_anastasia|1/9|52|
 |3822B1FI1|shurigin_sergey|1/9|56|
 |3822B1FI1|solovev_alexey|1/9|56|
 
