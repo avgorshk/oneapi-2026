@@ -5,13 +5,15 @@
 
 #include "integral_oneapi.h"
 
-float IntegralONEAPI(float start, float end, int count, sycl::device device) {
-    float local_res = 0.0f;
-    const float d = (end - start) / count;
+float IntegralONEAPI(float start, float end, int count, sycl::device device)
+{
+    const float dx = (end - start) / static_cast<float>(count);
 
     sycl::queue q(device);
 
-    sycl::buffer<float> sum_buf(&local_res, 1);
+    float sum = 0.0f;
+
+    sycl::buffer<float> sum_buf(&sum, 1);
 
     q.submit([&](sycl::handler& cgh) {
         auto reduction = sycl::reduction(sum_buf, cgh, sycl::plus<>());
@@ -20,12 +22,16 @@ float IntegralONEAPI(float start, float end, int count, sycl::device device) {
             sycl::range<2>(count, count),
             reduction,
             [=](sycl::id<2> id, auto& sum) {
-                float x = start + d * (id.get(0) + 0.5f);
-                float y = start + d * (id.get(1) + 0.5f);
-                sum += sycl::sin(x) * sycl::cos(y);
+                const int i = static_cast<int>(id.get(0));
+                const int j = static_cast<int>(id.get(1));
+
+                const float x = start + dx * (i + 0.5f);
+                const float y = start + dx * (j + 0.5f);
+
+                sum += std::sin(x) * std::cos(y);
             }
         );
     }).wait();
 
-    return local_res * d * d;
+    return sum * dx * dx;
 }
