@@ -1,5 +1,3 @@
-﻿#include <iostream>
-#include <chrono>
 #include <cmath>
 #include <sycl/sycl.hpp>
 
@@ -34,4 +32,5 @@ float IntegralONEAPI(float start, float end, int count, sycl::device device)
     }).wait();
 
     return sum * dx * dx;
+
 }
