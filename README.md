@@ -485,8 +485,8 @@ std::vector<float> JacobiKokkos(
 |3822B1FI3|lopatin_ilya|0.2017|1|
 |3822B1FI1|kabalova_valeria|0.2107|2|
 |3822B1FI1|solovev_alexey|0.2119|5|
-|3822B1FI3|kolodkin_grigorii|0.2419|2|
 |3822B1FI1|shurigin_sergey|0.2419|4|
+|3822B1FI3|kolodkin_grigorii|0.2419|2|
 |**REF**|**REF**|**0.2492**|**-**|
 |3822B1FI1|rezantseva_anastasia|0.2582|7|
 
