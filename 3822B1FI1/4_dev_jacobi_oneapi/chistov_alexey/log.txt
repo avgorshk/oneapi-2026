@@ -1,0 +1,22 @@
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/4_dev_jacobi_oneapi/chistov_alexey/dev_jacobi_oneapi.cpp:9:20: error: use of undeclared identifier 'vector'
+    9 |   const int size = vector.size();
+      |                    ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/4_dev_jacobi_oneapi/chistov_alexey/dev_jacobi_oneapi.cpp:16:53: error: use of undeclared identifier 'matrix'
+   16 |   float *device_matrix = sycl::malloc_device<float>(matrix.size(), queue);
+      |                                                     ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/4_dev_jacobi_oneapi/chistov_alexey/dev_jacobi_oneapi.cpp:17:53: error: use of undeclared identifier 'vector'
+   17 |   float *device_vector = sycl::malloc_device<float>(vector.size(), queue);
+      |                                                     ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/4_dev_jacobi_oneapi/chistov_alexey/dev_jacobi_oneapi.cpp:22:31: error: use of undeclared identifier 'matrix'
+   22 |   queue.memcpy(device_matrix, matrix.data(), matrix.size() * sizeof(float)).wait();
+      |                               ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/4_dev_jacobi_oneapi/chistov_alexey/dev_jacobi_oneapi.cpp:22:46: error: use of undeclared identifier 'matrix'
+   22 |   queue.memcpy(device_matrix, matrix.data(), matrix.size() * sizeof(float)).wait();
+      |                                              ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/4_dev_jacobi_oneapi/chistov_alexey/dev_jacobi_oneapi.cpp:23:31: error: use of undeclared identifier 'vector'
+   23 |   queue.memcpy(device_vector, vector.data(), vector.size() * sizeof(float)).wait();
+      |                               ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/4_dev_jacobi_oneapi/chistov_alexey/dev_jacobi_oneapi.cpp:23:46: error: use of undeclared identifier 'vector'
+   23 |   queue.memcpy(device_vector, vector.data(), vector.size() * sizeof(float)).wait();
+      |                                              ^
+7 errors generated.

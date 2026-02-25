@@ -1,4 +1,1 @@
-/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/chistov_alexey/acc_jacobi_oneapi.cpp:3:10: fatal error: 'buffer.hpp' file not found
-    3 | #include <buffer.hpp>
-      |          ^~~~~~~~~~~~
-1 error generated.
+Your application is too slow (> 7 seconds)
