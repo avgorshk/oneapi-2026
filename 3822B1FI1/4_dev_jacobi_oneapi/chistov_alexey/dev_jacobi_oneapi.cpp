@@ -6,21 +6,21 @@ std::vector<float> JacobiAccONEAPI(const std::vector<float> a,
                                    const std::vector<float> b,
                                    float accuracy,
                                    sycl::device device) {
-  const int size = vector.size();
+  const int size = b.size();
   int iteration = 0;
   float current_error = 0.0f;
   
   std::vector<float> result(size, 0.0f);
   sycl::queue queue(device);
 
-  float *device_matrix = sycl::malloc_device<float>(matrix.size(), queue);
-  float *device_vector = sycl::malloc_device<float>(vector.size(), queue);
+  float *device_matrix = sycl::malloc_device<float>(a.size(), queue);
+  float *device_vector = sycl::malloc_device<float>(b.size(), queue);
   float *device_current = sycl::malloc_device<float>(size, queue);
   float *device_previous = sycl::malloc_device<float>(size, queue);
   float *device_error = sycl::malloc_device<float>(1, queue);
 
-  queue.memcpy(device_matrix, matrix.data(), matrix.size() * sizeof(float)).wait();
-  queue.memcpy(device_vector, vector.data(), vector.size() * sizeof(float)).wait();
+  queue.memcpy(device_matrix, a.data(), a.size() * sizeof(float)).wait();
+  queue.memcpy(device_vector, b.data(), b.size() * sizeof(float)).wait();
   queue.memset(device_current, 0, sizeof(float) * size);
   queue.memset(device_previous, 0, sizeof(float) * size);
   queue.memset(device_error, 0, sizeof(float));
