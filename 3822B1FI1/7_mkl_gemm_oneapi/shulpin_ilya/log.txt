@@ -1,1 +1,22 @@
-Number of bytes in output 0 is not matched with expected 65536
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/7_mkl_gemm_oneapi/shulpin_ilya/mkl_gemm_oneapi.cpp:34:10: error: member reference base type 'void' is not a structure or union
+   25 |         oneapi::mkl::blas::row_major::gemm(
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   26 |             q,
+      |             ~~
+   27 |             transA, transB,
+      |             ~~~~~~~~~~~~~~~
+   28 |             m, n, k,
+      |             ~~~~~~~~
+   29 |             1.0f,
+      |             ~~~~~
+   30 |             A_buf, size,
+      |             ~~~~~~~~~~~~
+   31 |             B_buf, size,
+      |             ~~~~~~~~~~~~
+   32 |             0.0f,
+      |             ~~~~~
+   33 |             C_buf, size
+      |             ~~~~~~~~~~~
+   34 |         ).wait_and_throw();
+      |         ~^~~~~~~~~~~~~~~
+1 error generated.
