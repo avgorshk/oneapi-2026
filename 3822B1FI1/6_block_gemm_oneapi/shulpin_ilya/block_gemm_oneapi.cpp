@@ -11,7 +11,6 @@ std::vector<float> GemmBlockONEAPI(
     }
 
     constexpr size_t BLOCK_SIZE = 64;
-
     const size_t num_blocks = size / BLOCK_SIZE;
 
     std::vector<float> c(size * size, 0.0f);
@@ -35,19 +34,21 @@ std::vector<float> GemmBlockONEAPI(
                     const size_t bj = idx[1];
                     const size_t ti = idx[2];
 
-                    float acc = 0.0f;
+                    for (size_t c_col_local = 0; c_col_local < BLOCK_SIZE; ++c_col_local) {
+                        float acc = 0.0f;
 
-                    for (size_t bk = 0; bk < num_blocks; ++bk) {
-                        for (size_t tj = 0; tj < BLOCK_SIZE; ++tj) {
-                            size_t a_idx = (bi * BLOCK_SIZE + ti) * size + (bk * BLOCK_SIZE + tj);
-                            size_t b_idx = (bk * BLOCK_SIZE + tj) * size + (bj * BLOCK_SIZE + tj);
+                        for (size_t bk = 0; bk < num_blocks; ++bk) {
+                            for (size_t k_local = 0; k_local < BLOCK_SIZE; ++k_local) {
+                                size_t a_idx = (bi * BLOCK_SIZE + ti) * size + (bk * BLOCK_SIZE + k_local);
+                                size_t b_idx = (bk * BLOCK_SIZE + k_local) * size + (bj * BLOCK_SIZE + c_col_local);
 
-                            acc += A[a_idx] * B[b_idx];
+                                acc += A[a_idx] * B[b_idx];
+                            }
                         }
-                    }
 
-                    size_t c_idx = (bi * BLOCK_SIZE + ti) * size + (bj * BLOCK_SIZE + tj);
-                    C[c_idx] = acc;
+                        size_t c_idx = (bi * BLOCK_SIZE + ti) * size + (bj * BLOCK_SIZE + c_col_local);
+                        C[c_idx] = acc;
+                    }
                 });
         }).wait();
 
@@ -58,7 +59,6 @@ std::vector<float> GemmBlockONEAPI(
         }
 
         return result;
-
     } catch (sycl::exception const&) {
         return {};
     }
