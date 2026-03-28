@@ -1,7 +1,5 @@
-#include <iostream>
-#include <chrono>
 #include <cmath>
-#include <sycl/sycl.hpp>
+#include "integral_oneapi.h"
 
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
