@@ -756,6 +756,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI3|kolodkin_grigorii|0.3787|1|
 |3822B1FI1|solovev_alexey|0.3892|3|
 |3822B1FI2|plekhanov_daniil|BUILD FAILED|-|
+|3822B1FI2|vyunov_danila|BUILD FAILED|-|
 |3822B1FI1|mironov_arseniy|BUILD FAILED|-|
 
 # Tasks Done
