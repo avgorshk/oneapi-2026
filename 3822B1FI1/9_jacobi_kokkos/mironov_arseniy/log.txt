@@ -1,8 +1,0 @@
-/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/9_jacobi_kokkos/mironov_arseniy/jacobi_kokkos.cpp:13:30: error: unknown type name 'SYLDeviceUSMSpace'; did you mean 'SYCLDeviceUSMSpace'?
-   13 |   View<float **, LayoutLeft, SYLDeviceUSMSpace> in_a("in_a", size, size);
-      |                              ^~~~~~~~~~~~~~~~~
-      |                              SYCLDeviceUSMSpace
-/home/crazyproger/kokkos/build/install/include/SYCL/Kokkos_SYCL_Space.hpp:42:7: note: 'SYCLDeviceUSMSpace' declared here
-   42 | class SYCLDeviceUSMSpace {
-      |       ^
-1 error generated.

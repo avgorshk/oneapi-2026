@@ -647,6 +647,7 @@ std::vector<float> JacobiKokkos(
 ## 6_block_gemm_oneapi (3072 elements)
 |Group|Name|Result|Rank|
 |-----|----|------|----|
+|3822B1FI1|mironov_arseniy|0.8297|10|
 |3822B1FI2|guseynov_emil|0.8647|4|
 |3822B1FI2|khokhlov_andrey|0.8738|3|
 |3822B1FI1|rezantseva_anastasia|0.8756|5|
@@ -672,7 +673,6 @@ std::vector<float> JacobiKokkos(
 |3822B1FI3|kolodkin_grigorii|2.1427|1|
 |3822B1FI2|vyunov_danila|3.1434|7|
 |3822B1FI1|shulpin_ilya|3.5330|7|
-|3822B1FI1|mironov_arseniy|BUILD FAILED|-|
 
 ## 7_mkl_gemm_oneapi (3072 elements)
 |Group|Name|Result|Rank|
@@ -739,6 +739,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|shulpin_ilya|0.2572|6|
 |**REF**|**REF**|**0.2679**|**-**|
 |3822B1FI2|khokhlov_andrey|0.2865|3|
+|3822B1FI1|mironov_arseniy|0.2993|10|
 |3822B1FI2|vyunova_ekaterina|0.3052|5|
 |3822B1FI1|kurakin_matvey|0.3155|9|
 |3822B1FI3|lopatin_ilya|0.3165|3|
@@ -757,28 +758,27 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|solovev_alexey|0.3892|3|
 |3822B1FI2|plekhanov_daniil|BUILD FAILED|-|
 |3822B1FI2|vyunov_danila|BUILD FAILED|-|
-|3822B1FI1|mironov_arseniy|BUILD FAILED|-|
 
 # Tasks Done
 ## 3822B1FI1
 |Group|Name|Passed|Score|
 |-----|----|------|-----|
-|3822B1FI1|beskhmelnova_kseniya|**9/9**|**522**|
-|3822B1FI1|chistov_alexey|**9/9**|**529**|
-|3822B1FI1|drozhdinov_dmitriy|**9/9**|**481**|
+|3822B1FI1|beskhmelnova_kseniya|**9/9**|**520**|
+|3822B1FI1|chistov_alexey|**9/9**|**527**|
+|3822B1FI1|drozhdinov_dmitriy|**9/9**|**479**|
 |3822B1FI1|grudzin_konstantin|3/9|148|
-|3822B1FI1|ionova_ekaterina|**9/9**|**468**|
+|3822B1FI1|ionova_ekaterina|**9/9**|**467**|
 |3822B1FI1|ivanov_mikhail|0/9|0|
 |3822B1FI1|kabalova_valeria|2/9|112|
-|3822B1FI1|kurakin_matvey|**9/9**|**450**|
-|3822B1FI1|mironov_arseniy|7/9|353|
-|3822B1FI1|rezantseva_anastasia|**9/9**|**511**|
-|3822B1FI1|shulpin_ilya|**9/9**|**483**|
-|3822B1FI1|shurigin_sergey|**9/9**|**489**|
-|3822B1FI1|solovev_alexey|**9/9**|**504**|
+|3822B1FI1|kurakin_matvey|**9/9**|**448**|
+|3822B1FI1|mironov_arseniy|**9/9**|**461**|
+|3822B1FI1|rezantseva_anastasia|**9/9**|**509**|
+|3822B1FI1|shulpin_ilya|**9/9**|**482**|
+|3822B1FI1|shurigin_sergey|**9/9**|**487**|
+|3822B1FI1|solovev_alexey|**9/9**|**502**|
 |3822B1FI1|suvorov_dmitrii|2/9|104|
 
-Passed: 9
+Passed: 10
 
 ## 3822B1FI2
 |Group|Name|Passed|Score|
@@ -809,7 +809,7 @@ Passed: 3
 
 Passed: 6
 
-**Total Passed: 18**
+**Total Passed: 19**
 
 ---
 *Maximum Score: 576 (64 per task)*
