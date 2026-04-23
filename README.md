@@ -710,6 +710,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|kurakin_matvey|0.9079|9|
 |3822B1FI3|chizhov_maxim|0.9086|7|
 |3822B1FI3|kholin_kirill|0.9087|4|
+|3822B1FI2|sdobnov_vladimir|0.9105|10|
 |3822B1FI1|ivanov_mikhail|0.9124|11|
 |3822B1FI2|plekhanov_daniil|0.9128|5|
 |3822B1FI1|shurigin_sergey|0.9134|4|
@@ -872,10 +873,10 @@ Passed: 12
 |3822B1FI2|dormidontov_egor|**9/9**|**493**|
 |3822B1FI2|guseynov_emil|7/9|402|
 |3822B1FI2|khokhlov_andrey|**9/9**|**527**|
-|3822B1FI2|plekhanov_daniil|**9/9**|**512**|
-|3822B1FI2|sdobnov_vladimir|3/9|163|
+|3822B1FI2|plekhanov_daniil|**9/9**|**511**|
+|3822B1FI2|sdobnov_vladimir|4/9|211|
 |3822B1FI2|shkurinskaya_elena|**9/9**|**477**|
-|3822B1FI2|vyunov_danila|6/9|320|
+|3822B1FI2|vyunov_danila|6/9|319|
 |3822B1FI2|vyunova_ekaterina|7/9|387|
 |3822B1FI2|yasakova_tanya|**9/9**|**524**|
 
