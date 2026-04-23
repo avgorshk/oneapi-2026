@@ -595,7 +595,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI2|yasakova_tanya|0.3980|2|
 |3822B1FI2|sdobnov_vladimir|0.4597|4|
 |3822B1FI1|drozhdinov_dmitriy|0.5052|2|
-|3822B1FI1|suvorov_dmitrii|BUILD FAILED|-|
+|3822B1FI1|suvorov_dmitrii|TEST FAILED|-|
 |3822B1FI1|vershinina_olga|TEST FAILED|-|
 |3822B1FI1|kuznetsov_mikhail|BUILD FAILED|-|
 |3822B1FI2|guseynov_emil|TOO SLOW|-|
@@ -607,6 +607,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI3|sozonov_ilya|0.1168|9|
 |3822B1FI1|rezantseva_anastasia|0.1838|6|
 |3822B1FI1|ivanov_mikhail|0.2061|11|
+|3822B1FI1|suvorov_dmitrii|0.2067|14|
 |3822B1FI1|ionova_ekaterina|0.2077|9|
 |3822B1FI1|grudzin_konstantin|0.2145|12|
 |3822B1FI1|shulpin_ilya|0.2275|8|
@@ -635,7 +636,6 @@ std::vector<float> JacobiKokkos(
 |3822B1FI3|frolova_elizaveta|0.4842|2|
 |3822B1FI1|beskhmelnova_kseniya|0.5692|1|
 |3822B1FI1|chistov_alexey|0.6086|2|
-|3822B1FI1|suvorov_dmitrii|BUILD FAILED|-|
 |3822B1FI1|vershinina_olga|TEST FAILED|-|
 |3822B1FI2|guseynov_emil|BUILD FAILED|-|
 |3822B1FI2|vyunova_ekaterina|BUILD FAILED|-|
@@ -649,6 +649,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|chistov_alexey|0.1641|1|
 |3822B1FI1|rezantseva_anastasia|0.1869|6|
 |3822B1FI1|ionova_ekaterina|0.2024|8|
+|3822B1FI1|suvorov_dmitrii|0.2030|14|
 |3822B1FI1|ivanov_mikhail|0.2098|11|
 |3822B1FI3|shmidt_olga|0.2202|11|
 |3822B1FI2|dormidontov_egor|0.2231|7|
@@ -678,7 +679,6 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|kurakin_matvey|0.3797|10|
 |3822B1FI3|kolodkin_grigorii|0.4017|1|
 |3822B1FI3|frolova_elizaveta|0.4647|2|
-|3822B1FI1|suvorov_dmitrii|BUILD FAILED|-|
 |3822B1FI1|vershinina_olga|TEST FAILED|-|
 |3822B1FI2|vyunov_danila|BUILD FAILED|-|
 |3822B1FI2|sdobnov_vladimir|BUILD FAILED|-|
@@ -847,21 +847,21 @@ std::vector<float> JacobiKokkos(
 ## 3822B1FI1
 |Group|Name|Passed|Score|
 |-----|----|------|-----|
-|3822B1FI1|beskhmelnova_kseniya|**9/9**|**500**|
-|3822B1FI1|chistov_alexey|**9/9**|**507**|
-|3822B1FI1|drozhdinov_dmitriy|**9/9**|**453**|
-|3822B1FI1|grudzin_konstantin|**9/9**|**424**|
-|3822B1FI1|ionova_ekaterina|**9/9**|**445**|
-|3822B1FI1|ivanov_mikhail|**9/9**|**427**|
+|3822B1FI1|beskhmelnova_kseniya|**9/9**|**498**|
+|3822B1FI1|chistov_alexey|**9/9**|**506**|
+|3822B1FI1|drozhdinov_dmitriy|**9/9**|**451**|
+|3822B1FI1|grudzin_konstantin|**9/9**|**422**|
+|3822B1FI1|ionova_ekaterina|**9/9**|**444**|
+|3822B1FI1|ivanov_mikhail|**9/9**|**426**|
 |3822B1FI1|kabalova_valeria|2/9|107|
-|3822B1FI1|kurakin_matvey|**9/9**|**426**|
-|3822B1FI1|kuznetsov_mikhail|8/9|373|
-|3822B1FI1|mironov_arseniy|**9/9**|**444**|
+|3822B1FI1|kurakin_matvey|**9/9**|**424**|
+|3822B1FI1|kuznetsov_mikhail|8/9|371|
+|3822B1FI1|mironov_arseniy|**9/9**|**442**|
 |3822B1FI1|rezantseva_anastasia|**9/9**|**494**|
-|3822B1FI1|shulpin_ilya|**9/9**|**460**|
-|3822B1FI1|shurigin_sergey|**9/9**|**462**|
-|3822B1FI1|solovev_alexey|**9/9**|**478**|
-|3822B1FI1|suvorov_dmitrii|6/9|300|
+|3822B1FI1|shulpin_ilya|**9/9**|**458**|
+|3822B1FI1|shurigin_sergey|**9/9**|**460**|
+|3822B1FI1|solovev_alexey|**9/9**|**476**|
+|3822B1FI1|suvorov_dmitrii|8/9|397|
 |3822B1FI1|vershinina_olga|4/9|184|
 
 Passed: 12
