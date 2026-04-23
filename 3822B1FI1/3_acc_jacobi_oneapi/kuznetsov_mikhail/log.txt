@@ -1,95 +1,76 @@
-/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:20:33: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
-   20 |     sycl::buffer<float, 1> x_new(sycl::range<1>(n));
-      |                                 ^~~~~~~~~~~~~~~~~~~
-/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:20:34: note: add a pair of parentheses to declare a variable
-   20 |     sycl::buffer<float, 1> x_new(sycl::range<1>(n));
-      |                                  ^                
-      |                                  (                )
-/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:35:27: error: member reference base type 'sycl::buffer<float, 1> (sycl::range<1>)' is not a structure or union
-   35 |             auto Xc = curr->get_access<sycl::access::mode::write>(h);
-      |                       ~~~~^ ~~~~~~~~~~
-/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:67:9: error: no matching function for call to 'swap'
-   67 |         std::swap(prev, curr);
-      |         ^~~~~~~~~
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_bvector.h:118:3: note: candidate function not viable: no known conversion from 'sycl::buffer<float, 1> *' to '_Bit_reference' for 1st argument
-  118 |   swap(_Bit_reference __x, _Bit_reference __y) noexcept
-      |   ^    ~~~~~~~~~~~~~~~~~~
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_bvector.h:126:3: note: candidate function not viable: no known conversion from 'sycl::buffer<float, 1> *' to '_Bit_reference' for 1st argument
-  126 |   swap(_Bit_reference __x, bool& __y) noexcept
-      |   ^    ~~~~~~~~~~~~~~~~~~
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_bvector.h:134:3: note: candidate function not viable: no known conversion from 'sycl::buffer<float, 1> *' to 'bool &' for 1st argument
-  134 |   swap(bool& __x, _Bit_reference __y) noexcept
-      |   ^    ~~~~~~~~~
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/move.h:196:5: note: candidate template ignored: deduced conflicting types for parameter '_Tp' ('sycl::buffer<float, 1> *' vs. 'sycl::buffer<float, 1> (*)(sycl::range<1>)')
-  196 |     swap(_Tp& __a, _Tp& __b)
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/move.h:220:5: note: candidate template ignored: could not match '_Tp[_Nm]' against 'sycl::buffer<float, 1> *'
-  220 |     swap(_Tp (&__a)[_Nm], _Tp (&__b)[_Nm])
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:533:5: note: candidate template ignored: could not match 'pair<_T1, _T2>' against 'sycl::buffer<float, 1> *'
-  533 |     swap(pair<_T1, _T2>& __x, pair<_T1, _T2>& __y)
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:541:5: note: candidate template ignored: could not match 'pair<_T1, _T2>' against 'sycl::buffer<float, 1> *'
-  541 |     swap(pair<_T1, _T2>&, pair<_T1, _T2>&) = delete;
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/array:348:5: note: candidate template ignored: could not match 'array<_Tp, _Nm>' against 'sycl::buffer<float, 1> *'
-  348 |     swap(array<_Tp, _Nm>& __one, array<_Tp, _Nm>& __two)
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/array:356:5: note: candidate template ignored: could not match 'array<_Tp, _Nm>' against 'sycl::buffer<float, 1> *'
-  356 |     swap(array<_Tp, _Nm>&, array<_Tp, _Nm>&) = delete;
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:1760:5: note: candidate template ignored: could not match 'tuple<_Elements...>' against 'sycl::buffer<float, 1> *'
- 1760 |     swap(tuple<_Elements...>& __x, tuple<_Elements...>& __y)
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:1768:5: note: candidate template ignored: could not match 'tuple<_Elements...>' against 'sycl::buffer<float, 1> *'
- 1768 |     swap(tuple<_Elements...>&, tuple<_Elements...>&) = delete;
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:758:5: note: candidate template ignored: could not match 'function<_Res (_Args...)>' against 'sycl::buffer<float, 1> *'
-  758 |     swap(function<_Res(_Args...)>& __x, function<_Res(_Args...)>& __y) noexcept
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_map.h:2120:5: note: candidate template ignored: could not match 'unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>' against 'sycl::buffer<float, 1> *'
- 2120 |     swap(unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_map.h:2127:5: note: candidate template ignored: could not match 'unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>' against 'sycl::buffer<float, 1> *'
- 2127 |     swap(unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:1962:5: note: candidate template ignored: could not match 'vector<_Tp, _Alloc>' against 'sycl::buffer<float, 1> *'
- 1962 |     swap(vector<_Tp, _Alloc>& __x, vector<_Tp, _Alloc>& __y)
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:738:5: note: candidate template ignored: could not match 'unique_ptr<_Tp, _Dp>' against 'sycl::buffer<float, 1> *'
-  738 |     swap(unique_ptr<_Tp, _Dp>& __x,
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:745:5: note: candidate template ignored: could not match 'unique_ptr<_Tp, _Dp>' against 'sycl::buffer<float, 1> *'
-  745 |     swap(unique_ptr<_Tp, _Dp>&,
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1534:5: note: candidate template ignored: could not match '__shared_ptr<_Tp, _Lp>' against 'sycl::buffer<float, 1> *'
- 1534 |     swap(__shared_ptr<_Tp, _Lp>& __a, __shared_ptr<_Tp, _Lp>& __b) noexcept
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1740:5: note: candidate template ignored: could not match '__weak_ptr<_Tp, _Lp>' against 'sycl::buffer<float, 1> *'
- 1740 |     swap(__weak_ptr<_Tp, _Lp>& __a, __weak_ptr<_Tp, _Lp>& __b) noexcept
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:574:5: note: candidate template ignored: could not match 'shared_ptr<_Tp>' against 'sycl::buffer<float, 1> *'
-  574 |     swap(shared_ptr<_Tp>& __a, shared_ptr<_Tp>& __b) noexcept
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:763:5: note: candidate template ignored: could not match 'weak_ptr<_Tp>' against 'sycl::buffer<float, 1> *'
-  763 |     swap(weak_ptr<_Tp>& __a, weak_ptr<_Tp>& __b) noexcept
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:6493:5: note: candidate template ignored: could not match 'basic_string<_CharT, _Traits, _Alloc>' against 'sycl::buffer<float, 1> *'
- 6493 |     swap(basic_string<_CharT, _Traits, _Alloc>& __lhs,
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/optional:1264:5: note: candidate template ignored: could not match 'optional<_Tp>' against 'sycl::buffer<float, 1> *'
- 1264 |     swap(optional<_Tp>& __lhs, optional<_Tp>& __rhs)
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/optional:1270:5: note: candidate template ignored: could not match 'optional<_Tp>' against 'sycl::buffer<float, 1> *'
- 1270 |     swap(optional<_Tp>&, optional<_Tp>&) = delete;
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/variant:1285:5: note: candidate template ignored: could not match 'variant<_Types...>' against 'sycl::buffer<float, 1> *'
- 1285 |     swap(variant<_Types...>& __lhs, variant<_Types...>& __rhs)
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/variant:1292:5: note: candidate template ignored: could not match 'variant<_Types...>' against 'sycl::buffer<float, 1> *'
- 1292 |     swap(variant<_Types...>&, variant<_Types...>&) = delete;
-      |     ^
-/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_lock.h:236:5: note: candidate template ignored: could not match 'unique_lock<_Mutex>' against 'sycl::buffer<float, 1> *'
-  236 |     swap(unique_lock<_Mutex>& __x, unique_lock<_Mutex>& __y) noexcept
-      |     ^
-1 warning and 2 errors generated.
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:17:64: error: non-constant-expression cannot be narrowed from type 'int' to 'typename std::enable_if_t<(1 == 1), size_t>' (aka 'unsigned long') in initializer list [-Wc++11-narrowing]
+   17 |     sycl::buffer<float, 1> x_old(x_init.data(), sycl::range<1>{n});
+      |                                                                ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:17:64: note: insert an explicit cast to silence this issue
+   17 |     sycl::buffer<float, 1> x_old(x_init.data(), sycl::range<1>{n});
+      |                                                                ^
+      |                                                                static_cast<type>( )
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:18:63: error: non-constant-expression cannot be narrowed from type 'int' to 'typename std::enable_if_t<(1 == 1), size_t>' (aka 'unsigned long') in initializer list [-Wc++11-narrowing]
+   18 |     sycl::buffer<float, 1> x_new(x_tmp.data(), sycl::range<1>{n});
+      |                                                               ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:18:63: note: insert an explicit cast to silence this issue
+   18 |     sycl::buffer<float, 1> x_new(x_tmp.data(), sycl::range<1>{n});
+      |                                                               ^
+      |                                                               static_cast<type>( )
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:27:62: error: non-constant-expression cannot be narrowed from type 'int' to 'typename std::enable_if_t<(1 == 1), size_t>' (aka 'unsigned long') in initializer list [-Wc++11-narrowing]
+   27 |             h.parallel_for<class jacobi_step>(sycl::range<1>{n}, [=](sycl::id<1> idx) {
+      |                                                              ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:27:62: note: insert an explicit cast to silence this issue
+   27 |             h.parallel_for<class jacobi_step>(sycl::range<1>{n}, [=](sycl::id<1> idx) {
+      |                                                              ^
+      |                                                              static_cast<type>( )
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:48:31: warning: 'get_access' is deprecated: get_access for host_accessor is deprecated, please use get_host_access instead [-Wdeprecated-declarations]
+   48 |             auto Xc_h = x_new.get_access<sycl::access::mode::read>();
+      |                               ^
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/buffer.hpp:529:37: note: 'get_access' has been explicitly marked deprecated here
+  529 |           accessor_property_list<>> get_access(const detail::code_location
+      |                                     ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:48:31: warning: 'get_access<sycl::access::mode::read>' is deprecated: get_access for host_accessor is deprecated, please use get_host_access instead [-Wdeprecated-declarations]
+   48 |             auto Xc_h = x_new.get_access<sycl::access::mode::read>();
+      |                               ^
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/buffer.hpp:523:3: note: 'get_access<sycl::access::mode::read>' has been explicitly marked deprecated here
+  523 |   __SYCL2020_DEPRECATED("get_access for host_accessor is deprecated, please "
+      |   ^
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/detail/defines_elementary.hpp:62:40: note: expanded from macro '__SYCL2020_DEPRECATED'
+   62 | #define __SYCL2020_DEPRECATED(message) __SYCL_DEPRECATED(message)
+      |                                        ^
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/detail/defines_elementary.hpp:53:38: note: expanded from macro '__SYCL_DEPRECATED'
+   53 | #define __SYCL_DEPRECATED(message) [[deprecated(message)]]
+      |                                      ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:49:31: warning: 'get_access' is deprecated: get_access for host_accessor is deprecated, please use get_host_access instead [-Wdeprecated-declarations]
+   49 |             auto Xp_h = x_old.get_access<sycl::access::mode::read_write>();
+      |                               ^
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/buffer.hpp:529:37: note: 'get_access' has been explicitly marked deprecated here
+  529 |           accessor_property_list<>> get_access(const detail::code_location
+      |                                     ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:49:31: warning: 'get_access<sycl::access::mode::read_write>' is deprecated: get_access for host_accessor is deprecated, please use get_host_access instead [-Wdeprecated-declarations]
+   49 |             auto Xp_h = x_old.get_access<sycl::access::mode::read_write>();
+      |                               ^
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/buffer.hpp:523:3: note: 'get_access<sycl::access::mode::read_write>' has been explicitly marked deprecated here
+  523 |   __SYCL2020_DEPRECATED("get_access for host_accessor is deprecated, please "
+      |   ^
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/detail/defines_elementary.hpp:62:40: note: expanded from macro '__SYCL2020_DEPRECATED'
+   62 | #define __SYCL2020_DEPRECATED(message) __SYCL_DEPRECATED(message)
+      |                                        ^
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/detail/defines_elementary.hpp:53:38: note: expanded from macro '__SYCL_DEPRECATED'
+   53 | #define __SYCL_DEPRECATED(message) [[deprecated(message)]]
+      |                                      ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:64:26: warning: 'get_access' is deprecated: get_access for host_accessor is deprecated, please use get_host_access instead [-Wdeprecated-declarations]
+   64 |         auto out = x_old.get_access<sycl::access::mode::read>();
+      |                          ^
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/buffer.hpp:529:37: note: 'get_access' has been explicitly marked deprecated here
+  529 |           accessor_property_list<>> get_access(const detail::code_location
+      |                                     ^
+/home/crazyproger/sandbox/oneapi-2026/3822B1FI1/3_acc_jacobi_oneapi/kuznetsov_mikhail/acc_jacobi_oneapi.cpp:64:26: warning: 'get_access<sycl::access::mode::read>' is deprecated: get_access for host_accessor is deprecated, please use get_host_access instead [-Wdeprecated-declarations]
+   64 |         auto out = x_old.get_access<sycl::access::mode::read>();
+      |                          ^
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/buffer.hpp:523:3: note: 'get_access<sycl::access::mode::read>' has been explicitly marked deprecated here
+  523 |   __SYCL2020_DEPRECATED("get_access for host_accessor is deprecated, please "
+      |   ^
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/detail/defines_elementary.hpp:62:40: note: expanded from macro '__SYCL2020_DEPRECATED'
+   62 | #define __SYCL2020_DEPRECATED(message) __SYCL_DEPRECATED(message)
+      |                                        ^
+/opt/intel/oneapi/compiler/2025.1/bin/compiler/../../include/sycl/detail/defines_elementary.hpp:53:38: note: expanded from macro '__SYCL_DEPRECATED'
+   53 | #define __SYCL_DEPRECATED(message) [[deprecated(message)]]
+      |                                      ^
+6 warnings and 3 errors generated.
