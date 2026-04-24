@@ -11,17 +11,14 @@ std::vector<float> JacobiKokkos(const std::vector<float>& a, const std::vector<f
 
     auto aHost = Kokkos::create_mirror_view(aView);
     auto bHost = Kokkos::create_mirror_view(bView);
-
     for (int i = 0; i < n; ++i) {
         bHost(i) = b[i];
         for (int j = 0; j < n; ++j) {
             aHost(i, j) = a[i * n + j];
         }
     }
-
     Kokkos::deep_copy(aView, aHost);
     Kokkos::deep_copy(bView, bHost);
-
     Kokkos::deep_copy(xOld, 0.0f);
 
     for (int iter = 0; iter < ITERATIONS; ++iter) {
@@ -35,13 +32,22 @@ std::vector<float> JacobiKokkos(const std::vector<float>& a, const std::vector<f
             xNew(i) = (bView(i) - sigma) / aView(i, i);
         });
 
+        float error = 0.0f;
+        Kokkos::parallel_reduce("checkConvergence", n, KOKKOS_LAMBDA(int i, float& local_max) {
+            float diff = Kokkos::fabs(xNew(i) - xOld(i));
+            if (diff > local_max) local_max = diff;
+        }, Kokkos::Max<float>(error));
+
+        if (error < accuracy) {
+            Kokkos::deep_copy(xOld, xNew);
+            break;
+        }
         Kokkos::deep_copy(xOld, xNew);
     }
 
     std::vector<float> result(n);
     auto resultHost = Kokkos::create_mirror_view(xOld);
     Kokkos::deep_copy(resultHost, xOld);
-
     for (int i = 0; i < n; ++i) {
         result[i] = resultHost(i);
     }
