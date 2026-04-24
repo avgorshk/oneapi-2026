@@ -893,7 +893,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|beresnev_anton|RUN FAILED|-|
 |3822B1FI2|vyunov_danila|BUILD FAILED|-|
 |3822B1FI3|shmidt_olga|RUN FAILED|-|
-|3822B1FI3|sozonov_ilya|TEST FAILED|-|
+|3822B1FI3|sozonov_ilya|RUN FAILED|-|
 |3822B1FI3|solovyev_danila|TOO SLOW|-|
 
 # Tasks Done
