@@ -1,8 +1,6 @@
 #include "jacobi_kokkos.h"
-
-#include <algorithm>
 #include <cmath>
-#include <vector>
+#include <algorithm>
 
 std::vector<float> JacobiKokkos(
     const std::vector<float> &a,
@@ -16,24 +14,21 @@ std::vector<float> JacobiKokkos(
     if (a.size() != n * n)
         return {};
 
+    accuracy = std::max(0.0f, accuracy);
+
     using ExecSpace = Kokkos::DefaultExecutionSpace;
     using MemSpace = ExecSpace::memory_space;
 
-    Kokkos::View<const float **, MemSpace> A("A", n, n);
-    Kokkos::View<const float *, MemSpace> B("B", n);
+    Kokkos::View<float **, MemSpace> A("A", n, n);
+    Kokkos::View<float *, MemSpace> B("B", n);
     Kokkos::View<float *, MemSpace> x_curr("x_curr", n);
     Kokkos::View<float *, MemSpace> x_next("x_next", n);
 
-    auto A_host = Kokkos::create_mirror_view(A);
-    auto B_host = Kokkos::create_mirror_view(B);
-    for (size_t i = 0; i < n; ++i)
-    {
-        for (size_t j = 0; j < n; ++j)
-        {
-            A_host(i, j) = a[i * n + j];
-        }
-        B_host(i) = b[i];
-    }
+    Kokkos::View<const float **, Kokkos::HostSpace, Kokkos::MemoryTraits<Kokkos::Unmanaged>>
+        A_host(a.data(), n, n);
+    Kokkos::View<const float *, Kokkos::HostSpace, Kokkos::MemoryTraits<Kokkos::Unmanaged>>
+        B_host(b.data(), n);
+
     Kokkos::deep_copy(A, A_host);
     Kokkos::deep_copy(B, B_host);
 
@@ -76,11 +71,12 @@ std::vector<float> JacobiKokkos(
         x_next = tmp;
     }
 
-    Kokkos::View<float *, Kokkos::HostSpace> result_host("result_host", n);
-    Kokkos::deep_copy(result_host, converged ? x_curr : x_next);
+    auto &final_view = converged ? x_curr : x_next;
 
     std::vector<float> result(n);
-    for (size_t i = 0; i < n; ++i)
-        result[i] = result_host(i);
+    Kokkos::View<float *, Kokkos::HostSpace, Kokkos::MemoryTraits<Kokkos::Unmanaged>>
+        result_host(result.data(), n);
+    Kokkos::deep_copy(result_host, final_view);
+
     return result;
 }

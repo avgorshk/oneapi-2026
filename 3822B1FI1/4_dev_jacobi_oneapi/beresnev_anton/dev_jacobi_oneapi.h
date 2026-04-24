@@ -6,7 +6,7 @@
 
 #define ITERATIONS 1024
 
-std::vector<float> JacobiDevOneAPI(
+std::vector<float> JacobiDevONEAPI(
     const std::vector<float> &a, const std::vector<float> &b,
     float accuracy, sycl::device device);
 
