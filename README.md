@@ -578,6 +578,7 @@ std::vector<float> JacobiKokkos(
 |-----|----|------|----|
 |3822B1FI1|mironov_arseniy|0.2237|11|
 |3822B1FI1|baranov_aleksey|0.2284|14|
+|3822B1FI2|guseynov_emil|0.2388|9|
 |3822B1FI1|grudzin_konstantin|0.2468|9|
 |3822B1FI1|kuznetsov_mikhail|0.2508|17|
 |3822B1FI2|dormidontov_egor|0.2559|7|
@@ -617,7 +618,6 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|suvorov_dmitrii|TEST FAILED|-|
 |3822B1FI1|vershinina_olga|BUILD FAILED|-|
 |3822B1FI1|vasenkov_andrey|BUILD FAILED|-|
-|3822B1FI2|guseynov_emil|TOO SLOW|-|
 |3822B1FI2|vyunova_ekaterina|BUILD FAILED|-|
 |3822B1FI3|budazhapova_ekaterina|BUILD FAILED|-|
 
@@ -935,16 +935,16 @@ Passed: 14
 ## 3822B1FI2
 |Group|Name|Passed|Score|
 |-----|----|------|-----|
-|3822B1FI2|bessonov_egor|**9/9**|**527**|
-|3822B1FI2|dormidontov_egor|**9/9**|**490**|
-|3822B1FI2|guseynov_emil|7/9|399|
-|3822B1FI2|khokhlov_andrey|**9/9**|**525**|
-|3822B1FI2|plekhanov_daniil|**9/9**|**509**|
-|3822B1FI2|sdobnov_vladimir|8/9|425|
-|3822B1FI2|shkurinskaya_elena|**9/9**|**474**|
-|3822B1FI2|vyunov_danila|6/9|318|
+|3822B1FI2|bessonov_egor|**9/9**|**526**|
+|3822B1FI2|dormidontov_egor|**9/9**|**489**|
+|3822B1FI2|guseynov_emil|8/9|455|
+|3822B1FI2|khokhlov_andrey|**9/9**|**524**|
+|3822B1FI2|plekhanov_daniil|**9/9**|**508**|
+|3822B1FI2|sdobnov_vladimir|8/9|424|
+|3822B1FI2|shkurinskaya_elena|**9/9**|**473**|
+|3822B1FI2|vyunov_danila|6/9|317|
 |3822B1FI2|vyunova_ekaterina|7/9|385|
-|3822B1FI2|yasakova_tanya|**9/9**|**520**|
+|3822B1FI2|yasakova_tanya|**9/9**|**519**|
 
 Passed: 6
 
