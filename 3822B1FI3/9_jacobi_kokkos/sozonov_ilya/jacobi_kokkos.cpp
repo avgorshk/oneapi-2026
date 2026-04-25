@@ -36,23 +36,27 @@ std::vector<float> JacobiKokkos(const std::vector<float>& a,
           const float* row = &A(i * n);
           const float xi = x_old(i);
 
-          double sigma = 0.0;
+          float sigma = 0.0f;
+
+          float s0 = 0.0f, s1 = 0.0f, s2 = 0.0f, s3 = 0.0f;
 
           int j = 0;
           for (; j + 4 <= n; j += 4) {
-            sigma += (double)row[j] * x_old(j);
-            sigma += (double)row[j + 1] * x_old(j + 1);
-            sigma += (double)row[j + 2] * x_old(j + 2);
-            sigma += (double)row[j + 3] * x_old(j + 3);
+            s0 += row[j] * x_old(j);
+            s1 += row[j + 1] * x_old(j + 1);
+            s2 += row[j + 2] * x_old(j + 2);
+            s3 += row[j + 3] * x_old(j + 3);
           }
+
+          sigma = (s0 + s1) + (s2 + s3);
+
           for (; j < n; ++j) {
-            sigma += (double)row[j] * x_old(j);
+            sigma += row[j] * x_old(j);
           }
 
-          sigma -= (double)row[i] * xi;
+          sigma -= row[i] * xi;
 
-          const float new_val =
-              (B(i) - static_cast<float>(sigma)) * inv_diag(i);
+          const float new_val = (B(i) - sigma) * inv_diag(i);
 
           const float diff = fabsf(new_val - xi);
 
