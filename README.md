@@ -780,6 +780,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI2|plekhanov_daniil|0.3012|5|
 |3822B1FI1|kuznetsov_mikhail|0.3019|13|
 |3822B1FI1|mironov_arseniy|0.3027|10|
+|3822B1FI2|sdobnov_vladimir|0.3040|10|
 |3822B1FI1|suvorov_dmitrii|0.3069|12|
 |3822B1FI2|dormidontov_egor|0.3104|9|
 |3822B1FI2|guseynov_emil|0.3119|4|
@@ -927,16 +928,16 @@ Passed: 14
 ## 3822B1FI2
 |Group|Name|Passed|Score|
 |-----|----|------|-----|
-|3822B1FI2|bessonov_egor|**9/9**|**529**|
-|3822B1FI2|dormidontov_egor|**9/9**|**492**|
-|3822B1FI2|guseynov_emil|7/9|401|
+|3822B1FI2|bessonov_egor|**9/9**|**528**|
+|3822B1FI2|dormidontov_egor|**9/9**|**491**|
+|3822B1FI2|guseynov_emil|7/9|400|
 |3822B1FI2|khokhlov_andrey|**9/9**|**526**|
 |3822B1FI2|plekhanov_daniil|**9/9**|**510**|
-|3822B1FI2|sdobnov_vladimir|6/9|320|
+|3822B1FI2|sdobnov_vladimir|7/9|370|
 |3822B1FI2|shkurinskaya_elena|**9/9**|**475**|
 |3822B1FI2|vyunov_danila|6/9|319|
 |3822B1FI2|vyunova_ekaterina|7/9|386|
-|3822B1FI2|yasakova_tanya|**9/9**|**522**|
+|3822B1FI2|yasakova_tanya|**9/9**|**521**|
 
 Passed: 6
 
