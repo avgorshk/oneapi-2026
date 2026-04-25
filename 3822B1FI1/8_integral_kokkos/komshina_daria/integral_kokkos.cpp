@@ -6,17 +6,12 @@ float IntegralKokkos(float start, float end, int count) {
     }
 
     const float step = (end - start) / static_cast<float>(count);
-    const int total = count * count;
-
-    double sum = 0.0;
+    float sum = 0.0f;
 
     Kokkos::parallel_reduce(
-        "IntegralKokkosMiddleRiemann",
-        Kokkos::RangePolicy<Kokkos::SYCL>(0, total),
-        KOKKOS_LAMBDA(const int index, double& local_sum) {
-            const int i = index % count;
-            const int j = index / count;
-
+        "IntegralKokkos",
+        Kokkos::MDRangePolicy<Kokkos::Rank<2>>({0, 0}, {count, count}),
+        KOKKOS_LAMBDA(const int i, const int j, float& local_sum) {
             const float x = start + (static_cast<float>(i) + 0.5f) * step;
             const float y = start + (static_cast<float>(j) + 0.5f) * step;
 
@@ -27,5 +22,5 @@ float IntegralKokkos(float start, float end, int count) {
 
     Kokkos::fence();
 
-    return static_cast<float>(sum * step * step);
+    return sum * step * step;
 }
