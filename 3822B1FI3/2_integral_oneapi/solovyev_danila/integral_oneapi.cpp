@@ -6,7 +6,7 @@ float IntegralONEAPI(float start, float end, int count, sycl::device device) {
     float totalSum = 0.0f;
 
     sycl::queue q(device);
-
+    {
     sycl::buffer<float, 1> sumBuf(&totalSum, sycl::range<1>(1));
 
     q.submit([&](sycl::handler& h) {
@@ -24,6 +24,6 @@ float IntegralONEAPI(float start, float end, int count, sycl::device device) {
                 sumAcc += sycl::sin(x) * sycl::cos(y);
             });
     }).wait();
-
+    }
     return totalSum * (delta * delta);
 }
