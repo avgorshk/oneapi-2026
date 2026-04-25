@@ -1,5 +1,6 @@
 #include "shared_jacobi_oneapi.h"
 
+#include <cmath>
 #include <algorithm>
 #include <vector>
 
