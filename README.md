@@ -483,6 +483,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|kurakin_matvey|0.0422|12|
 |3822B1FI1|baranov_aleksey|0.0441|21|
 |3822B1FI3|kudryashova_irina|0.0615|9|
+|3822B1FI1|shpynov_nikita|0.0650|22|
 |3822B1FI1|chistov_alexey|0.0672|1|
 |3822B1FI3|shmidt_olga|0.0676|11|
 |3822B1FI1|shulpin_ilya|0.0710|8|
@@ -527,7 +528,6 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|mironov_arseniy|0.2517|10|
 |3822B1FI1|ionova_ekaterina|0.2542|9|
 |3822B1FI3|chizhov_maxim|0.3237|7|
-|3822B1FI1|shpynov_nikita|TEST FAILED|-|
 
 ## 2_integral_oneapi (65536 elements)
 |Group|Name|Result|Rank|
@@ -580,7 +580,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|baranov_aleksey|1.0140|18|
 |3822B1FI1|kurakin_matvey|1.0185|12|
 |3822B1FI1|shulpin_ilya|1.0230|8|
-|3822B1FI1|shpynov_nikita|TOO SLOW|-|
+|3822B1FI1|shpynov_nikita|RUN FAILED|-|
 
 ## 3_acc_jacobi_oneapi (4096 elements)
 |Group|Name|Result|Rank|
@@ -695,6 +695,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|baranov_aleksey|0.1481|19|
 |3822B1FI3|agafeev_sergey|0.1543|14|
 |3822B1FI1|chistov_alexey|0.1641|1|
+|3822B1FI1|shpynov_nikita|0.1800|22|
 |3822B1FI1|rezantseva_anastasia|0.1869|6|
 |3822B1FI1|vasenkov_andrey|0.1978|21|
 |3822B1FI1|komshina_daria|0.1993|18|
@@ -739,7 +740,6 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|kurakin_matvey|0.3797|10|
 |3822B1FI3|kolodkin_grigorii|0.4017|1|
 |3822B1FI3|frolova_elizaveta|0.4647|2|
-|3822B1FI1|shpynov_nikita|BUILD FAILED|-|
 
 ## 6_block_gemm_oneapi (3072 elements)
 |Group|Name|Result|Rank|
@@ -786,13 +786,13 @@ std::vector<float> JacobiKokkos(
 |3822B1FI3|kudryashova_irina|0.9253|8|
 |3822B1FI3|lysov_ivan|0.9502|6|
 |3822B1FI3|budazhapova_ekaterina|1.0220|12|
+|3822B1FI1|shpynov_nikita|1.7409|22|
 |3822B1FI1|vasenkov_andrey|1.7514|20|
 |3822B1FI1|beresnev_anton|1.9800|16|
 |3822B1FI3|ulyanov_daniil|2.0831|15|
 |3822B1FI3|kolodkin_grigorii|2.1427|1|
 |3822B1FI2|vyunov_danila|3.1434|7|
 |3822B1FI1|shulpin_ilya|3.5330|7|
-|3822B1FI1|shpynov_nikita|TOO SLOW|-|
 
 ## 7_mkl_gemm_oneapi (3072 elements)
 |Group|Name|Result|Rank|
@@ -958,27 +958,27 @@ std::vector<float> JacobiKokkos(
 |Group|Name|Passed|Score|
 |-----|----|------|-----|
 |3822B1FI1|baranov_aleksey|**9/9**|**356**|
-|3822B1FI1|beresnev_anton|**9/9**|**351**|
-|3822B1FI1|beskhmelnova_kseniya|**9/9**|**457**|
-|3822B1FI1|chistov_alexey|**9/9**|**469**|
-|3822B1FI1|drozhdinov_dmitriy|**9/9**|**403**|
-|3822B1FI1|grudzin_konstantin|**9/9**|**396**|
-|3822B1FI1|ionova_ekaterina|**9/9**|**409**|
-|3822B1FI1|ivanov_mikhail|**9/9**|**397**|
-|3822B1FI1|kabalova_valeria|**9/9**|**360**|
-|3822B1FI1|komshina_daria|**9/9**|**363**|
-|3822B1FI1|korobeinikov_arseny|**9/9**|**307**|
-|3822B1FI1|kurakin_matvey|**9/9**|**385**|
-|3822B1FI1|kuznetsov_mikhail|**9/9**|**389**|
-|3822B1FI1|mironov_arseniy|**9/9**|**412**|
-|3822B1FI1|rezantseva_anastasia|**9/9**|**463**|
-|3822B1FI1|shpynov_nikita|3/9|108|
-|3822B1FI1|shulpin_ilya|**9/9**|**425**|
-|3822B1FI1|shurigin_sergey|**9/9**|**413**|
-|3822B1FI1|solovev_alexey|**9/9**|**434**|
-|3822B1FI1|suvorov_dmitrii|**9/9**|**415**|
-|3822B1FI1|vasenkov_andrey|**9/9**|**288**|
-|3822B1FI1|vershinina_olga|**9/9**|**382**|
+|3822B1FI1|beresnev_anton|**9/9**|**348**|
+|3822B1FI1|beskhmelnova_kseniya|**9/9**|**455**|
+|3822B1FI1|chistov_alexey|**9/9**|**468**|
+|3822B1FI1|drozhdinov_dmitriy|**9/9**|**401**|
+|3822B1FI1|grudzin_konstantin|**9/9**|**394**|
+|3822B1FI1|ionova_ekaterina|**9/9**|**407**|
+|3822B1FI1|ivanov_mikhail|**9/9**|**395**|
+|3822B1FI1|kabalova_valeria|**9/9**|**358**|
+|3822B1FI1|komshina_daria|**9/9**|**361**|
+|3822B1FI1|korobeinikov_arseny|**9/9**|**305**|
+|3822B1FI1|kurakin_matvey|**9/9**|**384**|
+|3822B1FI1|kuznetsov_mikhail|**9/9**|**387**|
+|3822B1FI1|mironov_arseniy|**9/9**|**410**|
+|3822B1FI1|rezantseva_anastasia|**9/9**|**461**|
+|3822B1FI1|shpynov_nikita|6/9|214|
+|3822B1FI1|shulpin_ilya|**9/9**|**422**|
+|3822B1FI1|shurigin_sergey|**9/9**|**411**|
+|3822B1FI1|solovev_alexey|**9/9**|**432**|
+|3822B1FI1|suvorov_dmitrii|**9/9**|**414**|
+|3822B1FI1|vasenkov_andrey|**9/9**|**285**|
+|3822B1FI1|vershinina_olga|**9/9**|**380**|
 
 Passed: 21
 
