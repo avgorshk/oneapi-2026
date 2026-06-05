@@ -853,8 +853,8 @@ std::vector<float> JacobiKokkos(
 |3822B1FI2|polyakov_alexey|0.0002|11|
 |3822B1FI2|sdobnov_vladimir|0.0002|10|
 |3822B1FI3|lysov_ivan|0.0002|7|
-|3822B1FI1|shpynov_nikita|0.0003|22|
 |3822B1FI3|agafeev_sergey|0.0003|14|
+|3822B1FI1|shpynov_nikita|0.0003|22|
 |3822B1FI1|kuznetsov_mikhail|0.0003|14|
 |3822B1FI2|plekhanov_daniil|0.0005|5|
 |3822B1FI3|lopatin_ilya|0.0005|3|
