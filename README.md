@@ -922,6 +922,7 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|mironov_arseniy|0.2993|10|
 |3822B1FI3|shmidt_olga|0.3005|13|
 |3822B1FI1|beresnev_anton|0.3019|19|
+|3822B1FI1|shpynov_nikita|0.3019|22|
 |3822B1FI1|grudzin_konstantin|0.3034|14|
 |3822B1FI3|lysov_ivan|0.3043|7|
 |3822B1FI2|vyunova_ekaterina|0.3052|5|
@@ -951,36 +952,35 @@ std::vector<float> JacobiKokkos(
 |3822B1FI1|drozhdinov_dmitriy|0.3698|8|
 |3822B1FI3|kolodkin_grigorii|0.3787|1|
 |3822B1FI1|solovev_alexey|0.3892|3|
-|3822B1FI1|shpynov_nikita|TEST FAILED|-|
 
 # Tasks Done
 ## 3822B1FI1
 |Group|Name|Passed|Score|
 |-----|----|------|-----|
-|3822B1FI1|baranov_aleksey|**9/9**|**355**|
+|3822B1FI1|baranov_aleksey|**9/9**|**354**|
 |3822B1FI1|beresnev_anton|**9/9**|**347**|
-|3822B1FI1|beskhmelnova_kseniya|**9/9**|**454**|
-|3822B1FI1|chistov_alexey|**9/9**|**467**|
-|3822B1FI1|drozhdinov_dmitriy|**9/9**|**400**|
-|3822B1FI1|grudzin_konstantin|**9/9**|**393**|
+|3822B1FI1|beskhmelnova_kseniya|**9/9**|**453**|
+|3822B1FI1|chistov_alexey|**9/9**|**466**|
+|3822B1FI1|drozhdinov_dmitriy|**9/9**|**399**|
+|3822B1FI1|grudzin_konstantin|**9/9**|**392**|
 |3822B1FI1|ionova_ekaterina|**9/9**|**406**|
 |3822B1FI1|ivanov_mikhail|**9/9**|**394**|
 |3822B1FI1|kabalova_valeria|**9/9**|**357**|
 |3822B1FI1|komshina_daria|**9/9**|**360**|
-|3822B1FI1|korobeinikov_arseny|**9/9**|**304**|
-|3822B1FI1|kurakin_matvey|**9/9**|**382**|
-|3822B1FI1|kuznetsov_mikhail|**9/9**|**386**|
+|3822B1FI1|korobeinikov_arseny|**9/9**|**303**|
+|3822B1FI1|kurakin_matvey|**9/9**|**381**|
+|3822B1FI1|kuznetsov_mikhail|**9/9**|**385**|
 |3822B1FI1|mironov_arseniy|**9/9**|**409**|
-|3822B1FI1|rezantseva_anastasia|**9/9**|**460**|
-|3822B1FI1|shpynov_nikita|8/9|281|
+|3822B1FI1|rezantseva_anastasia|**9/9**|**459**|
+|3822B1FI1|shpynov_nikita|**9/9**|**315**|
 |3822B1FI1|shulpin_ilya|**9/9**|**420**|
-|3822B1FI1|shurigin_sergey|**9/9**|**410**|
-|3822B1FI1|solovev_alexey|**9/9**|**431**|
+|3822B1FI1|shurigin_sergey|**9/9**|**409**|
+|3822B1FI1|solovev_alexey|**9/9**|**430**|
 |3822B1FI1|suvorov_dmitrii|**9/9**|**413**|
-|3822B1FI1|vasenkov_andrey|**9/9**|**284**|
+|3822B1FI1|vasenkov_andrey|**9/9**|**283**|
 |3822B1FI1|vershinina_olga|**9/9**|**379**|
 
-Passed: 21
+Passed: 22
 
 ## 3822B1FI2
 |Group|Name|Passed|Score|
@@ -1020,7 +1020,7 @@ Passed: 11
 
 Passed: 15
 
-**Total Passed: 47**
+**Total Passed: 48**
 
 ---
 *Maximum Score: 576 (64 per task)*
